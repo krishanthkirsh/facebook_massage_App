@@ -5,6 +5,8 @@ import Message from './Message';
 import db from './Firebase';
 import firebase from 'firebase';
 import FlipMove from 'react-flip-move';
+import { IconButton } from '@material-ui/core';
+import SendIcon from '@material-ui/icons/Send';
 
 
 function App() {
@@ -43,12 +45,15 @@ console.log(messages);
 
   return (
     <div className="App">
-     <h1>Hello welcome to facebook messenger app clone</h1>
-    <form>
-    <FormControl>
-          <InputLabel htmlFor="my-input">Enter the message</InputLabel>
-          <Input  value={input} onChange={event => setInput(event.target.value)}></Input >
-          <Button type="submit" disabled={!input} variant="contained" color="primary" onClick={sentMessage}>Send Message</Button>
+     <img src="https://www.freepnglogos.com/uploads/facebook-messenger-png/file-facebook-messenger-logo-svg-17.png" width="100"  />
+     <h1>Facebook Messenger App Clone</h1>
+    <form className="app__form">
+    <FormControl className="app__formControl">
+          <Input className="app__input" placeholder="Enter the message" value={input} onChange={event => setInput(event.target.value)}></Input >
+          <IconButton className="app__iconButton" type="submit" disabled={!input} variant="contained" color="primary" onClick={sentMessage}>
+          <SendIcon>
+          </SendIcon>
+          </IconButton>
         </FormControl>
     </form>
      
